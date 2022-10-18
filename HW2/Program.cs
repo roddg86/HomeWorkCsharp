@@ -88,4 +88,23 @@ void Chek(int number)
 Chek(number);
 */
 
+// Решение 2
+/*
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+string numberText = Convert.ToString(number);
 
+void ChekNumber(string numberText)
+{
+    if (numberText.Length > 2)
+    {
+        Console.WriteLine($"{number} -> " + numberText[2]);
+    }
+    else
+    {
+        Console.WriteLine("третьей цифры нет");
+    }
+}
+
+ChekNumber(numberText);
+*/
