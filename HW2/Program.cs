@@ -33,7 +33,7 @@ Console.WriteLine($"New version of {number} is {newNum}");
 32679 -> 6
 */
 
-
+/*
 Console.Write("Найдем третью цифру, введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
@@ -58,7 +58,7 @@ int Chek(int number)
         while (newNum > 3)
         {
             number = number / 10;
-            newNum = newNum - 1;
+            newNum--;
         }
         Console.WriteLine($"третья цифра: "); 
         return number % 10;
@@ -71,6 +71,7 @@ int Chek(int number)
 }
 
 Console.WriteLine(Chek(number));
+*/
 
 
 /*
