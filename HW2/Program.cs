@@ -33,8 +33,8 @@ Console.WriteLine($"New version of {number} is {newNum}");
 32679 -> 6
 */
 
-/*
-Console.Write("Введите число: ");
+
+Console.Write("Найдем третью цифру, введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 // метод подсчитыает количество цифр в числе
@@ -60,16 +60,18 @@ int Chek(int number)
             number = number / 10;
             newNum = newNum - 1;
         }
+        Console.WriteLine($"третья цифра: "); 
         return number % 10;
     }
     else
     {
-        return -1;
+        Console.WriteLine($"цифр в числе: "); 
+        return newNum;
     }
 }
 
 Console.WriteLine(Chek(number));
-*/
+
 
 /*
 Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
