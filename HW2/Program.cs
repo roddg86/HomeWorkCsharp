@@ -46,72 +46,33 @@ int HowManyDigits(int number)
         number = number / 10;
         result++;
     }
-
     return result;
 }
 
-// метод выводит третью цифру 3 значного числа
-int ThirdDigit3(int number)
+// Вывести третью цифру
+int Chek(int number)
 {
-    int result = number % 10;
-
-    return result;
-}
-
-// метод выводит третью цифру 5 значного числа
-int ThirdDigit5(int number)
-{
-    int result = (number/100)%10;
-
-    return result;
-}
-
-int newNum = HowManyDigits(number);
-
-// Проерим есть ли третья цифра и выведем ее 
-void Chek(int number)
-{
-    if(newNum < 3)
+    int newNum = HowManyDigits(number);
+    if (newNum > 2)
     {
-        Console.WriteLine("третьей цифры нет");
-    }
-    else if (newNum == 3)
-    {
-        Console.WriteLine(ThirdDigit3(number));
+        while (newNum > 3)
+        {
+            number = number / 10;
+            newNum = newNum - 1;
+        }
+        return number % 10;
     }
     else
     {
-        Console.WriteLine(ThirdDigit5(number));
+        return -1;
     }
 }
 
-Chek(number);
-*/
-
-// Решение 2
-/*
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-string numberText = Convert.ToString(number);
-
-void ChekNumber(string numberText)
-{
-    if (numberText.Length > 2)
-    {
-        Console.WriteLine($"{number} -> " + numberText[2]);
-    }
-    else
-    {
-        Console.WriteLine("третьей цифры нет");
-    }
-}
-
-ChekNumber(numberText);
+Console.WriteLine(Chek(number));
 */
 
 /*
 Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-
 6 -> да
 7 -> да
 1 -> нет
@@ -119,9 +80,7 @@ ChekNumber(numberText);
 
 /*
 Console.Write("Введите номер дня, является ли день выходным: ");
-
 int number = Convert.ToInt32(Console.ReadLine());
-
 bool CheckDay(int dayNumber)
 {
     if (dayNumber == 6 || dayNumber == 7)
@@ -135,6 +94,5 @@ bool CheckDay(int dayNumber)
         return false;
     }
 }
-
 CheckDay(number);
 */
