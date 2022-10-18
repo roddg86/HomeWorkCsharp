@@ -6,7 +6,8 @@
 918 -> 1
 */
 
-Console.Write("Введите число: ");
+/*
+Console.Write("Введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 int SecondDigit(int number)
@@ -20,3 +21,5 @@ int SecondDigit(int number)
 int newNum = SecondDigit(number);
 
 Console.WriteLine($"New version of {number} is {newNum}");
+*/
+
