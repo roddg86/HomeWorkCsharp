@@ -122,15 +122,17 @@ Console.Write("Введите номер дня, является ли день 
 
 int number = Convert.ToInt32(Console.ReadLine());
 
-void CheckDay(int dayNumber)
+bool CheckDay(int dayNumber)
 {
     if (dayNumber == 6 || dayNumber == 7)
     {
         Console.WriteLine("да");
+        return true;
     }
     else
     {
         Console.WriteLine("нет");
+        return false;
     }
 }
 
