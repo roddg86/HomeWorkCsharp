@@ -10,12 +10,11 @@
 23432 -> да
 */
 
-
-
 // метод для подсчета количества цифр в числе
-/* bool isPalindrome(int number)
+bool isPalindrome(int number)
 {
     int save = number;
+    Console.WriteLine($"{save}");
 
     int value;
 
@@ -24,8 +23,11 @@
     while (save > 0)
     {
         value = save % 10;
+        //Console.WriteLine($"{value}");
         rev = rev * 10 + value;
+        //Console.WriteLine($"{rev}");
         save /= 10;
+        //Console.WriteLine($"{save}");
     }
 
     if (rev == number)
@@ -43,7 +45,7 @@
 Console.Write("Число палиндром?: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-isPalindrome(num); */
+isPalindrome(num);
 
 /* Задача 21
 
