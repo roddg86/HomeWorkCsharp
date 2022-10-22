@@ -10,38 +10,9 @@
 23432 -> да
 */
 
-// метод подсчитывает количество цифр в числе
-/* int HowManyDigits(int number)
-{
-    int result = 0;
-    while (number > 0)
-    {
-        number = number / 10;
-        result++;
-    }
-    return result;
-}
 
-// метод сравнивает первую с пятой и вторую с четвертой цифры
-void isPalindrome(int number)
-{
-    int newNum = HowManyDigits(number);
-    if (newNum == 5)
-    {
-        if (number / 10000 == number % 10)
-        {
-            if ((number / 1000) % 10 == (number % 100) / 10)
-            {
-                Console.WriteLine($"{number} -> да");
-            }
-            else Console.WriteLine($"{number} -> нет");
-        }
-        else Console.WriteLine($"{number} -> нет");
-    }
-    else Console.WriteLine("Ошибка");
-} */
 
-// метод для универсального количества цифр в числе
+// метод для подсчета количества цифр в числе
 /* bool isPalindrome(int number)
 {
     int save = number;
