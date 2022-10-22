@@ -11,7 +11,7 @@
 */
 
 // метод для подсчета количества цифр в числе
-bool isPalindrome(int number)
+/* bool isPalindrome(int number)
 {
     int save = number;
     Console.WriteLine($"{save}");
@@ -45,7 +45,7 @@ bool isPalindrome(int number)
 Console.Write("Число палиндром?: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-isPalindrome(num);
+isPalindrome(num); */
 
 /* Задача 21
 
