@@ -4,6 +4,25 @@
 
 2, 4 -> 16 */
 
+/* int Exponentiation(int A, int B)
+{
+    int exp = 1;
+
+    for (int i = 1; i <= B; i++)
+    {
+        exp *= A;
+    }
+    return exp;
+}
+
+Console.Write("Input a number A: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number B: ");
+int b = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine($"{a} to the extent {b} is {Exponentiation(a, b)}"); */
+
+
 /* Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
 452 -> 11
