@@ -51,8 +51,42 @@ Console.WriteLine($"The sum of the digits in a number {a} is {SumDigit(a)}"); */
 
 /* Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
 
-метод генерации массива сделать исходы из данных которые ввел пользователь, чтоы пользоваель заполнил массив
+метод генерации массива сделать исходя из данных которые ввел пользователь, чтобы пользоваель заполнил массив
 
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 
 6, 1, 33 -> [6, 1, 33] */
+
+/* // метод генерации массива случайных чисел
+int[] CreateArray(int size)
+{
+
+    Console.WriteLine("Enter array elements:");
+
+    int[] array = new int[size]; // выделяем память под массив
+
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}
+
+//  метод вывода массива на экран
+void ShowArray(int[] array)
+{
+
+    Console.Write("Array is: ");
+
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine(" :) \n ");
+}
+
+Console.Write("Input number of elements: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateArray(n);
+ShowArray(myArray); */
