@@ -31,6 +31,24 @@ Console.WriteLine($"{a} to the extent {b} is {Exponentiation(a, b)}"); */
 
 9012 -> 12 */
 
+/* int SumDigit(int number)
+{
+    int result = 0;
+
+    while (number != 0)
+    {
+        result += number % 10;
+        number /= 10;
+    }
+
+    return result;
+}
+
+Console.Write("Input a number: ");
+int a = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine($"The sum of the digits in a number {a} is {SumDigit(a)}"); */
+
 /* Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
 
 метод генерации массива сделать исходы из данных которые ввел пользователь, чтоы пользоваель заполнил массив
