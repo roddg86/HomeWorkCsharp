@@ -89,7 +89,7 @@ Console.WriteLine($"Ответ: {Distance(x1, y1, z1, x2, y2, z2)}"); */
 5 -> 1, 8, 27, 64, 125
  */
 
-/* void Table(int num)
+void Table(int num)
 {
     int count = 1;
     while (count <= num)
@@ -104,4 +104,4 @@ Console.WriteLine($"Ответ: {Distance(x1, y1, z1, x2, y2, z2)}"); */
 Console.Write("Input number: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-Table(number); */
+Table(number);
