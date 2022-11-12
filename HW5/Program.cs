@@ -23,7 +23,7 @@ void ShowArray(int[] array)
     Console.WriteLine();
 }
 
-int CountEvenNumber(int[] array)
+/* int CountEvenNumber(int[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -41,7 +41,7 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 int[] myArray = CreateRandomArray(n, min, max);
 ShowArray(myArray);
-CountEvenNumber(myArray);
+CountEvenNumber(myArray); */
 
 /* Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 Найдите сумму элементов, стоящих на нечётных позициях.
@@ -50,6 +50,25 @@ CountEvenNumber(myArray);
 
 [-4, -6, 89, 6] -> 0 */
 
+/* int SumElementsOddPositions(int[] array)
+{
+    int sumOdd = 0;
+    for (int i = 0; i < array.Length; i++)
+        if (i % 2 != 0) sumOdd += array[i];
+    Console.WriteLine(sumOdd);
+    return sumOdd;
+}
+
+Console.Write("Input a number of elements: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateRandomArray(n, min, max);
+ShowArray(myArray);
+SumElementsOddPositions(myArray); */
 
 /* Задача 38: Задайте массив вещественных чисел. 
 Найдите разницу между максимальным и минимальным элементов массива.

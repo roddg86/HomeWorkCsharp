@@ -1,9 +1,9 @@
 ﻿// базовые типы данных
-int a = 31;
+/* int a = 31;
 double b = -12.45;
 string c = "world";
 char d = '#';
-bool e = true;
+bool e = true; */
 
 Console.WriteLine("Hello! " + a + " and it is good!");
 Console.WriteLine($"Hello! {b} and it is good!");
