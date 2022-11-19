@@ -59,7 +59,7 @@ Show2dArray(myArray); */
 
 1 7 -> числа с такими индексами в массиве нет */
 
-/* // метод генерирует двумерный массив заполненный случайнми числами
+// метод генерирует двумерный массив заполненный случайнми числами
 int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -87,22 +87,22 @@ void Show2dArray(int[,] array)
 // метод ищет элемент в массиве по заданной позиции
 bool SearchElement(int[,] array, int rows, int columns)
 {
-    int current = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
-        for (int j = 0; j < array.GetLength(1); j++)
-            if (i == rows - 1 && j == columns - 1)
-                current = array[i, j];
+    if (rows < 0 | rows > array.GetLength(0) | columns < 0 | columns > array.GetLength(1)) return false;
+    else return true;
+}
 
-    if (rows < 0 | rows > array.GetLength(0) | columns < 0 | columns > array.GetLength(1))
+// метод выводит на экран элемент или говорит что его нет
+void ShowElement(int[,] array, bool searchElement)
+{
+    int current = 0;
+    if (searchElement)
     {
-        Console.WriteLine($"{rows}{columns} -> there are no numbers with such indices in the array");
-        return false;
-    }
-    else
-    {
+        for (int i = 0; i < array.GetLength(0); i++)
+            for (int j = 0; j < array.GetLength(1); j++)
+                current = array[i, j];
         Console.WriteLine($"The value of the selected item: {current}");
-        return true;
     }
+    else Console.WriteLine("There are no numbers with such indices in the array");
 }
 
 Console.Write("Input a number of rows: ");
@@ -123,8 +123,7 @@ int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter element column: ");
 int columns = Convert.ToInt32(Console.ReadLine());
 
-SearchElement(myArray, rows, columns);
- */
+ShowElement(myArray, SearchElement(myArray, rows, columns));
 
 /* Задача 52. Задайте двумерный массив из целых чисел. 
 Найдите среднее арифметическое элементов в каждом столбце.
