@@ -59,8 +59,73 @@ Show2dArray(myArray); */
 
 1 7 -> числа с такими индексами в массиве нет */
 
+/* // метод генерирует двумерный массив заполненный случайнми числами
+int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] array = new int[rows, columns];
 
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
 
+    return array;
+}
+
+// метод выводит двумерный массив на экран
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + "  ");
+
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+// метод ищет элемент в массиве по заданной позиции
+bool SearchElement(int[,] array, int rows, int columns)
+{
+    int current = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
+            if (i == rows - 1 && j == columns - 1)
+                current = array[i, j];
+
+    if (rows < 0 | rows > array.GetLength(0) | columns < 0 | columns > array.GetLength(1))
+    {
+        Console.WriteLine($"{rows}{columns} -> there are no numbers with such indices in the array");
+        return false;
+    }
+    else
+    {
+        Console.WriteLine($"The value of the selected item: {current}");
+        return true;
+    }
+}
+
+Console.Write("Input a number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of columns: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[,] myArray = CreateRandom2Array(m, n, min, max);
+Show2dArray(myArray);
+
+Console.Write("Enter element string: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter element column: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+SearchElement(myArray, rows, columns);
+ */
+ 
 /* Задача 52. Задайте двумерный массив из целых чисел. 
 Найдите среднее арифметическое элементов в каждом столбце.
 
