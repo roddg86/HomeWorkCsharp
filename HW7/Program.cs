@@ -180,7 +180,7 @@ double[] SearchAverage(int[,] array)
 void ShowArray(double[] array)
 {
     for (int i = 0; i < array.Length; i++)
-        Console.Write(Math.Round(array[i], 2) + " ");
+        Console.Write(Math.Round(array[i], 1) + " ");
 
     Console.WriteLine();
 }
