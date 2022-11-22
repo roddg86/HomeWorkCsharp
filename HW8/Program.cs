@@ -11,7 +11,7 @@
 9 5 3 2
 8 4 4 2 */
 
-// метод генерирует двумерный массив заполненный случайнми числами
+/* // метод генерирует двумерный массив заполненный случайнми числами
 int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -70,7 +70,7 @@ Console.WriteLine();
 
 int[,] myArray = CreateRandom2Array(m, n, min, max);
 Show2dArray(myArray);
-Show2dArray(SortDescending(myArray));
+Show2dArray(SortDescending(myArray)); */
 
 /* Задача 56: Задайте прямоугольный двумерный массив. 
 Напишите программу, которая будет находить строку с наименьшей суммой элементов.
@@ -85,7 +85,77 @@ Show2dArray(SortDescending(myArray));
 
 5 2 6 7
 
-Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка */
+Программа считает сумму элементов в каждой строке 
+и выдаёт номер строки с наименьшей суммой элементов: 1 строка */
+/* 
+// метод генерирует двумерный массив заполненный случайнми числами
+int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+
+    return array;
+}
+
+// метод выводит двумерный массив на экран
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+// метод считает сумму элементов в каждой строке двумерного массива
+int[] SumRow2DArray(int[,] array)
+{
+    int[] sumArray = new int[array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        int sumRow = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sumRow += array[i, j];
+        }
+        sumArray[i] = sumRow;
+    }
+    return sumArray;
+}
+
+// метод выдаёт номер строки с наименьшей суммой элементов
+int ShowNumber(int[,] array)
+{
+    int[] sumRow = SumRow2DArray(array);
+
+    int row = 0;
+    for (int i = 1; i < sumRow.Length; i++)
+    {
+        if (sumRow[i] < sumRow[row]) row = i;
+    }
+    Console.WriteLine($"{row + 1} строка");
+    return row;
+}
+
+Console.Write("Input a number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of columns: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[,] myArray = CreateRandom2Array(m, n, min, max);
+Show2dArray(myArray);
+ShowNumber(myArray); */
 
 /* Задача 58: Задайте две матрицы. 
 Напишите программу, которая будет находить произведение двух матриц.
