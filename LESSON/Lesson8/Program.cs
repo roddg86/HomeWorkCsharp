@@ -67,9 +67,10 @@ Show2dArray(myArray);
  */
 /* Задайте двумерный массив. 
 Напишите программу, которая заменяет строки на столбцы. 
-В случае, если это невозможно, программа должна вывести сообщение для пользователя. */
+В случае, если это невозможно, 
+программа должна вывести сообщение для пользователя. */
 
-void MatrixTransposition(int[,] array)
+/* void MatrixTransposition(int[,] array)
 {
     if (array.GetLength(0) == array.GetLength(1))
     {
@@ -89,7 +90,50 @@ void MatrixTransposition(int[,] array)
 
 MatrixTransposition(myArray);
 Show2dArray(myArray);
-
+ */
 /* Из двумерного массива целых чисел удалить строку и столбец, 
 на пересечении которых расположен наименьший элемент. */
 
+// метод находит индекс наименьшего элемента
+int[] GetMinIndexes(int[,] array)
+{
+    int[] minIndexes = { 0, 0 };
+
+    for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
+            if (array[i, j] < array[minIndexes[0], minIndexes[1]])
+            {
+                minIndexes[0] = i;
+                minIndexes[1] = j;
+            }
+    return minIndexes;
+}
+
+// усечение массива
+int[,] SquishArray(int[,] array)
+{
+    int[,] newArray = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
+    int[] minIndexes = GetMinIndexes(array);
+
+    for (int i = 0, k = 0; i < array.GetLength(0); i++, k++)
+    {
+        if (i != minIndexes[0])
+        {
+            for (int j = 0, l = 0; j < array.GetLength(1); j++, l++)
+                if (j != minIndexes[1])
+                    newArray[k, l] = array[i, j];
+                else l--;
+        }
+        else k--;
+    }
+    return newArray;
+}
+
+/* GetMinIndexes(myArray);
+
+int[] arrMin = GetMinIndexes(myArray);
+Console.WriteLine($"Minimal value :{myArray[arrMin[0], arrMin[1]]}, indexes: ({arrMin[0]}, {arrMin[1]})");
+ */
+
+int[,] squishedArray = SquishArray(myArray);
+Show2dArray(squishedArray);
