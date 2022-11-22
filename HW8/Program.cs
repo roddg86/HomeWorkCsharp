@@ -83,12 +83,12 @@ Show2dArray(SortDescending(myArray)); */
 
 8 4 2 4
 
-5 2 6 7
+5 2 6 7 */
 
-Программа считает сумму элементов в каждой строке 
-и выдаёт номер строки с наименьшей суммой элементов: 1 строка */
-/* 
-// метод генерирует двумерный массив заполненный случайнми числами
+/* Программа считает сумму элементов в каждой строке 
+и выдаёт номер строки с наименьшей суммой элементов: 1 строка  */
+
+/* // метод генерирует двумерный массив заполненный случайнми числами
 int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -130,7 +130,7 @@ int[] SumRow2DArray(int[,] array)
 }
 
 // метод выдаёт номер строки с наименьшей суммой элементов
-int ShowNumber(int[,] array)
+int ShowNumberSumRow2DArray(int[,] array)
 {
     int[] sumRow = SumRow2DArray(array);
 
@@ -139,7 +139,7 @@ int ShowNumber(int[,] array)
     {
         if (sumRow[i] < sumRow[row]) row = i;
     }
-    Console.WriteLine($"{row + 1} строка");
+    Console.WriteLine($"{row + 1} Line");
     return row;
 }
 
@@ -155,7 +155,7 @@ Console.WriteLine();
 
 int[,] myArray = CreateRandom2Array(m, n, min, max);
 Show2dArray(myArray);
-ShowNumber(myArray); */
+ShowNumberSumRow2DArray(myArray); */
 
 /* Задача 58: Задайте две матрицы. 
 Напишите программу, которая будет находить произведение двух матриц.
@@ -164,7 +164,7 @@ ShowNumber(myArray); */
 3 2 | 3 3
 Результирующая матрица будет:
 18 20
-15 18 */
+15 18
 
 /* Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
