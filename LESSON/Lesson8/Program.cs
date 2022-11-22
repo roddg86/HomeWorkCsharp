@@ -20,13 +20,14 @@ void Show2dArray(int[,] array)
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write(array[i, j] + "  ");
+            Console.Write(array[i, j] + "   ");
 
         Console.WriteLine();
     }
     Console.WriteLine();
 }
-
+/* 
+// меняем строки массива 
 void ChangeRows(int[,] array, int row1, int row2)
 {
     if (row1 >= 0 && row1 < array.GetLength(0) &&
@@ -41,7 +42,7 @@ void ChangeRows(int[,] array, int row1, int row2)
         }
     }
     else Console.WriteLine("Impossible to change!");
-}
+} */
 
 Console.Write("Input a number of rows: ");
 int m = Convert.ToInt32(Console.ReadLine());
@@ -56,12 +57,39 @@ Console.WriteLine();
 int[,] myArray = CreateRandom2Array(m, n, min, max);
 Show2dArray(myArray);
 
-Console.Write("Input a number of the first row to change: ");
+/* Console.Write("Input a number of the first row to change: ");
 int r1 = Convert.ToInt32(Console.ReadLine()) - 1;
 Console.Write("Input a number of the first row to change: ");
 int r2 = Convert.ToInt32(Console.ReadLine()) - 1;
 
 ChangeRows(myArray, r1, r2);
 Show2dArray(myArray);
+ */
+/* Задайте двумерный массив. 
+Напишите программу, которая заменяет строки на столбцы. 
+В случае, если это невозможно, программа должна вывести сообщение для пользователя. */
 
+void MatrixTransposition(int[,] array)
+{
+    if (array.GetLength(0) == array.GetLength(1))
+    {
+        for (int i = 1; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                int temp = array[i, j];
+                array[i, j] = array[j, i];
+                array[j, i] = temp;
+            }
+        }
+    }
+    else Console.WriteLine("Unable to do matrix transformation");
+}
+
+
+MatrixTransposition(myArray);
+Show2dArray(myArray);
+
+/* Из двумерного массива целых чисел удалить строку и столбец, 
+на пересечении которых расположен наименьший элемент. */
 
