@@ -88,7 +88,7 @@ Show2dArray(SortDescending(myArray)); */
 /* Программа считает сумму элементов в каждой строке 
 и выдаёт номер строки с наименьшей суммой элементов: 1 строка  */
 
-/* // метод генерирует двумерный массив заполненный случайнми числами
+// метод генерирует двумерный массив заполненный случайнми числами
 int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -133,12 +133,10 @@ int[] SumRow2DArray(int[,] array)
 int ShowNumberSumRow2DArray(int[,] array)
 {
     int[] sumRow = SumRow2DArray(array);
-
     int row = 0;
+    
     for (int i = 1; i < sumRow.Length; i++)
-    {
         if (sumRow[i] < sumRow[row]) row = i;
-    }
     Console.WriteLine($"{row + 1} Line");
     return row;
 }
@@ -155,7 +153,7 @@ Console.WriteLine();
 
 int[,] myArray = CreateRandom2Array(m, n, min, max);
 Show2dArray(myArray);
-ShowNumberSumRow2DArray(myArray); */
+ShowNumberSumRow2DArray(myArray);
 
 /* Задача 58: Задайте две матрицы. 
 Напишите программу, которая будет находить произведение двух матриц.
