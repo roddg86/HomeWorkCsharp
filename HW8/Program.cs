@@ -88,7 +88,7 @@ Show2dArray(SortDescending(myArray)); */
 /* Программа считает сумму элементов в каждой строке 
 и выдаёт номер строки с наименьшей суммой элементов: 1 строка  */
 
-// метод генерирует двумерный массив заполненный случайнми числами
+/* // метод генерирует двумерный массив заполненный случайнми числами
 int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -153,7 +153,7 @@ Console.WriteLine();
 
 int[,] myArray = CreateRandom2Array(m, n, min, max);
 Show2dArray(myArray);
-ShowNumberSumRow2DArray(myArray);
+ShowNumberSumRow2DArray(myArray); */
 
 /* Задача 58: Задайте две матрицы. 
 Напишите программу, которая будет находить произведение двух матриц.
@@ -163,6 +163,63 @@ ShowNumberSumRow2DArray(myArray);
 Результирующая матрица будет:
 18 20
 15 18
+*/
+
+// метод генерирует двумерный массив заполненный случайнми числами
+/* int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+
+    return array;
+}
+
+// метод выводит двумерный массив на экран
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+// метод находить произведение двух матриц
+int[,] MultiplyTwoMatrices(int[,] array1, int[,] array2)
+{
+    int[,] twoArray = new int[array1.GetLength(0), array2.GetLength(1)];
+
+    for (int i = 0; i < array1.GetLength(0); i++)
+        for (int j = 0; j < array2.GetLength(0); ++j)
+            for (int k = 0; k < array2.GetLength(1); k++)
+                twoArray[i, k] += array1[i, j] * array2[j, k];
+    return twoArray;
+}
+
+Console.Write("Input a number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of columns: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[,] myArray1 = CreateRandom2Array(m, n, min, max);
+int[,] myArray2 = CreateRandom2Array(m, n, min, max);
+//int[,] myArray11 = {{2,4},{3,2}};
+//int[,] myArray22 = {{3,4},{3,3}};
+Show2dArray(myArray1);
+Show2dArray(myArray2);
+int[,] twoArray = MultiplyTwoMatrices(myArray1, myArray2);
+Show2dArray(twoArray); */
 
 /* Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
