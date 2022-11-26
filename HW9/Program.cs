@@ -31,4 +31,11 @@ Console.Write(SumNumbers(1, 15)); */
 m = 2, n = 3 -> A(m,n) = 9
 m = 3, n = 2 -> A(m,n) = 29 */
 
+/* int AkkermanRecursion(int m, int n)
+{
+    if (m == 0) return n + 1;
+    else if (m > 0 && n == 0) return AkkermanRecursion(m - 1, 1);
+    else return AkkermanRecursion(m - 1, AkkermanRecursion(m, n - 1));  
+}
 
+Console.Write(AkkermanRecursion(2, 3)); */
