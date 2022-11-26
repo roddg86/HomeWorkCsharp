@@ -55,3 +55,18 @@ ShowNumbers(5, 10);
 task 4 
 Напишите программу, которая на вход принимает 
 два числа A и B, и возводит число А в целую степень B. */
+
+/* double CustomPower(double number, double power)
+{
+    if (power > 0)
+        return CustomPower(number, power - 1) * number;
+    else if (power < 0)
+        return CustomPower(number, power + 1) / number;
+    else
+        return 1.0;
+}
+
+Console.WriteLine(CustomPower(2, -3));
+ */
+
+
