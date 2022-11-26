@@ -4,16 +4,26 @@ task 1  Задайте значение N.
 Напишите программу, которая выведет все натуральные числа 
 в промежутке от 1 до N. */
 
-void ShowNums(int n)
+/* void ShowNums(int n)
 {
     //Console.Write(n + " ");
     if (n > 1) ShowNums(n - 1);
     Console.Write(n + " ");
 }
 
-ShowNums(5);
+ShowNums(5); */
 
 /* 
 task 2 Напишите программу, которая будет принимать
 на вход число и возвращать сумму его цифр. */
 
+/* int SumOfDigits(int n)
+{
+    if (n != 0) return SumOfDigits(n / 10) + n % 10;
+    return 0;
+}
+
+Console.WriteLine(SumOfDigits(5243)); */
+/* 
+task 3
+Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр. */
