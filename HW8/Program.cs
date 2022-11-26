@@ -230,13 +230,13 @@ Show2dArray(twoArray); */
 26(1,0,1) 55(1,1,1) */
 
 /* // метод генерирует трехмерный массив заполненный случайнми числами
-int[,,] CreateRandom3dArray(int rows, int columns, int lines, int minValue, int maxValue)
+int[,,] CreateRandom3dArray(int rows, int columns, int depths, int minValue, int maxValue)
 {
-    int[,,] array = new int[rows, columns, lines];
+    int[,,] array = new int[rows, columns, depths];
 
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++)
-            for (int k = 0; k < lines; k++)
+            for (int k = 0; k < depths; k++)
                 array[i, j, k] = new Random().Next(minValue, maxValue + 1);
 
     return array;
