@@ -44,13 +44,13 @@ int[,] SortDescending(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1) - 1; j++)
         {
-            for (int z = 0; z < array.GetLength(1) - 1; z++)
+            for (int k = 0; k < array.GetLength(1) - 1; k++)
             {
-                if (array[i, z] < array[i, z + 1])
+                if (array[i, k] < array[i, k + 1])
                 {
-                    temp = array[i, z];
-                    array[i, z] = array[i, z + 1];
-                    array[i, z + 1] = temp;
+                    temp = array[i, k];
+                    array[i, k] = array[i, k + 1];
+                    array[i, k + 1] = temp;
                 }
             }
         }
